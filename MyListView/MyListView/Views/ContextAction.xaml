@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyListView.Views.ContextAction">
+    <ListView x:Name="lstv1">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem x:Name="mnuItemMore" Text="More" CommandParameter="{Binding .}"
+                                  Clicked="mnuItemMore_Clicked"/>
+                        <MenuItem x:Name="mnuItemDelete" Text="Delete" CommandParameter="{Binding .}" 
+                                  Clicked="mnuItemDelete_Clicked"
+                                  IsDestructive="True"/>
+                    </ViewCell.ContextActions>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                        <StackLayout Padding="5,0,0,0" Orientation="Vertical" VerticalOptions="StartAndExpand">
+                            <Label Text="{Binding .}" VerticalTextAlignment="Center" FontSize="Medium"/>
+                            <Label Text="hint: trigger a context action" VerticalTextAlignment="Center" FontSize="Small"/>
+
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
